@@ -1,0 +1,179 @@
+.upload_box{
+    position: relative;
+    box-sizing: border-box;
+    /* margin: 40px auto; */
+    width: 400px;
+    min-height: 150px;
+    border: 1px dashed #ddd;
+    padding: 10px;
+}
+
+.upload_box.changeBorder{
+    border: 1px solid skyblue;
+}
+.upload_box .upload_inp{
+    display: none;
+}
+
+.upload_box .upload_button{
+    position: relative;
+    box-sizing: border-box;
+    min-width: 80px;
+    height: 30px;
+    line-height: 30px;
+    padding: 1px 10px;
+    text-align: center;
+    border: none;
+    cursor: pointer;
+    background-color: #ddd;
+    overflow: hidden;
+    border-radius: 3px;
+}
+.upload_box .upload_button::after{
+    position: absolute;
+    top: 30px;
+    left: 0;
+    z-index: 999;
+    content: 'loading...';
+    transition: top 0.1s;
+    padding-left: 25px;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    text-align: left;
+    color: #999;
+    background: url(./css/loading.gif) no-repeat 5px center #eee;
+    background-size: 15px 15px;
+}
+.upload_box .upload_button:hover{
+    opacity: 1;
+}
+.upload_box .upload_button:active{
+    opacity: 0.8;
+}
+.upload_box .upload_button:first-child{
+    margin-right: 10px;
+}
+.upload_box .upload_tip{
+    margin-top: 10px;
+    color: gray;
+    font-size: 12px;
+    user-select: none;
+}
+.upload_box .upload_button.select {
+    background: #409eff;
+    color: #FFF;
+}
+
+.upload_box .upload_button.upload {
+    background: #67c23a;
+    color: #FFF;
+}
+.upload_box .upload_button.loading{
+    cursor: not-allowed;
+}
+.upload_box .upload_button.loading:after {
+    top: 0;
+}
+.upload_box .upload_button.disabled {
+    background: #EEE;
+    color: #999;
+    cursor: not-allowed;
+}
+.upload_box .upload_button.disabled:active{
+    opacity: 1;
+}
+.upload_box .upload_list,
+.upload_box .upload_abbre{
+    display: none;
+    margin-top: 10px;
+    padding-left: 0;
+}
+.upload_box .upload_abbre img{
+    display: block;
+    width: 50%;
+    height: 50%;
+}
+.upload_box .upload_progress{
+    margin-top: 10px;
+    background-color: transparent;
+    height: 5px;
+    position: relative;
+    width: 50%;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    overflow: hidden;
+    display: none;
+}
+.upload_box .upload_progress .value{
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background-color: #67c23a;
+    height: 100%;
+    width: 0;
+    transition: width 0.3s;
+}
+.upload_box .upload_list li{
+    line-height: 20px;
+    font-size: 0;
+    list-style: none;
+}
+.upload_box .upload_list li span{
+    font-size: 12px;
+    color: #999;
+    display: inline-block;
+    margin-right: 10px;
+    max-width: 70%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.upload_box .upload_list li span em{
+    color: #f45728;
+    padding: 0 auto;
+    cursor: pointer;
+    font-style: normal;
+}
+.upload_box .upload_drap{
+    height: 130px;
+    position: relative;
+}
+.upload_box .upload_drap .icon,
+.upload_box .upload_drap .text{
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+.upload_box .upload_drap .icon{
+    top: 40%;
+    width: 80px;
+    height: 62px;
+    background: url(./css/upload.png) no-repeat;
+    background-size: 100% 100%;
+}
+.upload_box .upload_drap .text{
+    top: 80%;
+    color: #999;
+    font-size: 12px;
+    line-height: 25px;
+}
+.upload_box .upload_drap .text a{
+    text-decoration: none;
+    color: #409eff;
+}
+.upload_box .upload_mark{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background: rgba(0,0,0,.8);
+    z-index: 999;
+    color: #fff;
+    font-size: 12px;
+    text-align: center;
+    line-height: 150px;
+    display: none;
+}
